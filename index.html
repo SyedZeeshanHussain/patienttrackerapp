@@ -11,7 +11,33 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-      <h2>Patient Tracker App</h2>
+
+    <!--App Header Section-->
+    <header>
+      <div class="container-fluid mb-1">
+        <div class="row bg-success">
+        <h2 class="text-light text-center m-auto p-1">Patient Tracker</h2>
+        </div>
+      </div>
+      </header>
+
+
+      <!--Search bar-->
+          <div class="container-fluid text-center">
+            <form action="#">
+            <input type="search" placeholder="Search your Patient"><br>
+            <input type="radio" id="byName">
+            <label for="byName" class="mr-3">By Name</label>  
+              
+            <input type="radio" id="byDate">
+            <label for="byDate" class="mr-3">By Date</label> 
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </form>
+            </div>
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
