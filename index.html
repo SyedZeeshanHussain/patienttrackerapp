@@ -1,47 +1,145 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Patient Tracker App</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
+<head>
+  <title>Patient Tracker App</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--App Header Section-->
-    <header>
-      <div class="container-fluid mb-1">
-        <div class="row bg-success">
-        <h2 class="text-light text-center m-auto p-1">Patient Tracker</h2>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!--App Header Section-->
+  <header>
+    <div class="container-fluid m-auto text-center fixed-top">
+      <div class="row bg-success align-items-center justify-content-around d-inline-flex pr-3 pl-3 shadow" id="topbar">
+        <img src="./images/patients-white.png" alt="logo" id="pimage" class="p-2">
+        <h2 class="text-light">Patient Tracker</h2>
+        <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#addPatient">
+          <i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:#ffff;"></i>
+        </button>
+        <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#searchPatient">
+          <i class="fa fa-search fa-2x" aria-hidden="true" style="color:#ffff;"></i>
+        </button>
+      </div>
+      <div class="row">
+          <div id="mainDiv" class="m-auto text-left"></div>
+      </div>
+    </div>
+    </div>
+  </header>
+  <!--App Header Ends-->
+
+
+  <!--Add Patient Modal-->
+  <div class="modal fade" id="addPatient" tabindex="-1" role="dialog" aria-labelledby="addPtHeading"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-light">
+          <h5 class="modal-title" id="addPtHeading">Add Patient <i class="fa fa-user-circle" aria-hidden="true"></i></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="fa fa-window-close" style="color:white" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group input-group-sm">
+              <input type="text" class="form-control" id="pt_Name" placeholder="Enter Patient's Name">
+            </div>
+            <div class="form-group input-group-sm">
+              <input type="number" class="form-control" id="pt_Age" placeholder="Enter Patient's Age">
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+              <label class="form-check-label" for="male"><i class="fa fa-male" aria-hidden="true"></i> Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+              <label class="form-check-label" for="female"><i class="fa fa-female" aria-hidden="true"></i> Female</label>
+            </div>
+            <div class="form-group input-group-sm">
+              <input type="text" class="form-control" id="disease" placeholder="Enter Patient's Disease">
+            </div>
+            <div class="form-group input-group-sm">
+              <textarea class="form-control" id="medication" placeholder="Medication Provided"></textarea>
+            </div>
+            <div class="form-group input-group-sm">
+              <label for="aptDate"><i class="fa fa-calendar" aria-hidden="true"></i> Appointment Date</label>
+              <input type="date" class="form-control" id="aptDate" placeholder="Appointment Date">
+            </div>
+            <div class="form-group input-group-sm">
+              <input type="number" class="form-control" id="charges" placeholder="Visit Charges">
+            </div>
+            <div class="form-group input-group-sm">
+              <input type="text" class="form-control" id="contactDetails" placeholder="Contact Details">
+            </div>
+            <button type="reset" class="btn btn-secondary btn-sm float-right">Reset</button>
+            <button type="button" class="btn btn-success btn-sm float-right mr-1" onclick="getValue();">Add Patient</button>         
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--Add Patient Modal Ends-->
+
+
+  <!--Search Patient Modal-->
+  <div class="modal fade" id="searchPatient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-light">
+          <h5 class="modal-title" id="searchPtHeading">Search Patient <i class="fa fa-user-circle" aria-hidden="true"></i></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="fa fa-window-close" style="color:white" aria-hidden="true"></i>
+          </button>
+        </div> 
+
+        <div class="modal-body">
+            <h6 class="bg-success text-light p-1">Search by Name: <i class="fa fa-user float-right mr-2" aria-hidden="true"></i></h6>
+            <form>
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="Enter Patient's Name">
+                <div class="input-group-btn">
+                  <button class="btn btn-success btn-sm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </form>
+
+            <hr>
+
+            <h6 class="bg-success text-light p-1">Search by Appointment Date: <i class="fa fa-calendar float-right mr-2" aria-hidden="true"></i></h6>
+            <form>
+            <div class="input-group input-group-sm">
+              <input type="date" class="form-control">
+              <div class="input-group-btn">
+                <button class="btn btn-success btn-sm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </form>
+              </p>
         </div>
       </div>
-      </header>
+    </div>
+  </div>
+  <!--Search Patient Modal Ends-->
 
+   
 
-      <!--Search bar-->
-          <div class="container-fluid text-center">
-            <form action="#">
-            <input type="search" placeholder="Search your Patient"><br>
-            <input type="radio" id="byName">
-            <label for="byName" class="mr-3">By Name</label>  
-              
-            <input type="radio" id="byDate">
-            <label for="byDate" class="mr-3">By Date</label> 
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </form>
-            </div>
+  <!-- Optional JavaScript -->
+  <script src="script.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
 
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  </body>
 </html>
