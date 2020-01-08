@@ -16,3 +16,9 @@ body{
  #mainDiv{
     min-width: 500px;
  }
+
+ .searchbtn{
+     border-top-left-radius: 0px; 
+     border-bottom-left-radius: 0px; 
+ }
+

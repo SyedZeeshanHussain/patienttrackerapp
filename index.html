@@ -41,8 +41,8 @@
   <div class="modal fade" id="addPatient" tabindex="-1" role="dialog" aria-labelledby="addPtHeading"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header bg-success text-light">
+      <div class="modal-content border-0 rounded-0">
+        <div class="modal-header bg-success text-light rounded-0">
           <h5 class="modal-title" id="addPtHeading">Add Patient <i class="fa fa-user-circle" aria-hidden="true"></i></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <i class="fa fa-window-close" style="color:white" aria-hidden="true"></i>
@@ -57,11 +57,11 @@
               <input type="number" class="form-control" id="pt_Age" placeholder="Enter Patient's Age">
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+              <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
               <label class="form-check-label" for="male"><i class="fa fa-male" aria-hidden="true"></i> Male</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+              <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
               <label class="form-check-label" for="female"><i class="fa fa-female" aria-hidden="true"></i> Female</label>
             </div>
             <div class="form-group input-group-sm">
@@ -95,8 +95,8 @@
   <div class="modal fade" id="searchPatient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header bg-success text-light">
+      <div class="modal-content border-0 rounded-0">
+        <div class="modal-header bg-success text-light rounded-0">
           <h5 class="modal-title" id="searchPtHeading">Search Patient <i class="fa fa-user-circle" aria-hidden="true"></i></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <i class="fa fa-window-close" style="color:white" aria-hidden="true"></i>
@@ -104,24 +104,24 @@
         </div> 
 
         <div class="modal-body">
-            <h6 class="bg-success text-light p-1">Search by Name: <i class="fa fa-user float-right mr-2" aria-hidden="true"></i></h6>
+            <h6>Search by Name: <i class="fa fa-user" aria-hidden="true"></i></h6>
             <form>
               <div class="input-group input-group-sm">
                 <input type="text" class="form-control" placeholder="Enter Patient's Name">
                 <div class="input-group-btn">
-                  <button class="btn btn-success btn-sm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                  <button class="btn btn-success btn-sm searchbtn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
               </div>
             </form>
 
             <hr>
 
-            <h6 class="bg-success text-light p-1">Search by Appointment Date: <i class="fa fa-calendar float-right mr-2" aria-hidden="true"></i></h6>
+            <h6>Search by Appointment Date: <i class="fa fa-calendar" aria-hidden="true"></i></h6>
             <form>
             <div class="input-group input-group-sm">
               <input type="date" class="form-control">
               <div class="input-group-btn">
-                <button class="btn btn-success btn-sm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button class="btn btn-success btn-sm searchbtn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
               </div>
             </div>
           </form>
