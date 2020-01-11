@@ -49,19 +49,19 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="patientForm">
             <div class="form-group input-group-sm">
-              <input type="text" class="form-control" id="pt_Name" placeholder="Enter Patient's Name">
+              <input type="text" class="form-control" id="name" placeholder="Enter Patient's Name">
             </div>
             <div class="form-group input-group-sm">
-              <input type="number" class="form-control" id="pt_Age" placeholder="Enter Patient's Age">
+              <input type="number" class="form-control" id="age" placeholder="Enter Patient's Age">
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+              <input class="form-check-input" type="radio" name="gender" id="male" value="male">
               <label class="form-check-label" for="male"><i class="fa fa-male" aria-hidden="true"></i> Male</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+              <input class="form-check-input" type="radio" name="gender" id="female" value="female">
               <label class="form-check-label" for="female"><i class="fa fa-female" aria-hidden="true"></i> Female</label>
             </div>
             <div class="form-group input-group-sm">
@@ -78,10 +78,10 @@
               <input type="number" class="form-control" id="charges" placeholder="Visit Charges">
             </div>
             <div class="form-group input-group-sm">
-              <input type="text" class="form-control" id="contactDetails" placeholder="Contact Details">
+              <input type="text" class="form-control" id="contact" placeholder="Contact Details">
             </div>
-            <button type="reset" class="btn btn-secondary btn-sm float-right">Reset</button>
-            <button type="button" class="btn btn-success btn-sm float-right mr-1" onclick="getValue();">Add Patient</button>         
+            <button type="submit" class="btn btn-success btn-sm float-right">Add Patient</button>  
+            <button type="reset" class="btn btn-secondary btn-sm float-right mr-1">Reset</button>       
           </form>
         </div>
 
@@ -134,7 +134,8 @@
 
    
 
-  <!-- Optional JavaScript -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase.js"></script>
   <script src="script.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

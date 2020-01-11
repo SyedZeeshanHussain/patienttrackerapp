@@ -1,38 +1,61 @@
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+  apiKey: "AIzaSyC9DvNlVxvB72lHe36gUWv2K-TNuE0dAcM",
+  authDomain: "patient-tracker-1350c.firebaseapp.com",
+  databaseURL: "https://patient-tracker-1350c.firebaseio.com",
+  projectId: "patient-tracker-1350c",
+  storageBucket: "patient-tracker-1350c.appspot.com",
+  messagingSenderId: "35405842865",
+  appId: "1:35405842865:web:da025a8de956dab7d79590"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-  function getValue(){
-    var name = document.getElementById("pt_Name").value;
-    var age = document.getElementById("pt_Age").value;
-    var gender = document.getElementsByName('gender');
-    var age = document.getElementById("pt_Age").value;
-    var disease = document.getElementById("disease").value;
-    var main_div = document.getElementById("mainDiv");
-        var card_div = document.createElement('div');
-        var card_body = document.createElement('div');
-        var nameValue = document.createTextNode(name+" ");
-        var ageValue = document.createTextNode(age+" ");
-        var maleValue = document.createTextNode("Male");
-        var femaleValue = document.createTextNode("Female");
-        var para = document.createElement('p');
+// Reference messages collection
+var messagesRef = firebase.database().ref('patients');
 
-        var diseaseValue = document.createTextNode(disease);
+// Listen for form submit
+document.getElementById('patientForm').addEventListener('submit', submitForm);
 
-        card_body.appendChild(nameValue)
-        card_body.appendChild(ageValue)
+// Submit form
+function submitForm(e){
+  e.preventDefault();
 
-          if (gender[0].checked){
-            card_body.appendChild(maleValue)
-          }
-          else card_body.appendChild(femaleValue)
-          para.appendChild(diseaseValue)
-          card_body.appendChild(para)
-    
-        card_body.setAttribute('id',name)
-        card_body.setAttribute('id',age)
-        card_div.appendChild(card_body)
-        main_div.appendChild(card_div)
-        card_body.setAttribute('class','card-body')
-        card_div.setAttribute('class','card fade-in')
+  // Get values
+  var name = getInputVal('name');
+  var age = getInputVal('age');
+  var male = getInputVal('male');
+  var female = getInputVal('female');
+  var disease = getInputVal('disease');
+  var medication = getInputVal('medication');
+  var aptDate = getInputVal('aptDate');
+  var charges = getInputVal('charges');
+  var contact = getInputVal('contact');
 
-    }
+  // Save message
+  saveMessage(name, age, male, female, disease, medication, aptDate, charges, contact);
 
-  
+    // Clear form
+  document.getElementById('patientForm').reset();
+}
+
+// Function to get get form values
+function getInputVal(id){
+  return document.getElementById(id).value;
+}
+
+// Save message to firebase
+function saveMessage(name, age, male, female, disease, medication, aptDate, charges, contact){
+  var newMessageRef = messagesRef.push();
+  newMessageRef.set({
+    name: name,
+    age:age,
+    male:male,
+    female:female,
+    disease:disease,
+    medication:medication,
+    aptDate:aptDate,
+    charges:charges,
+    contact:contact,
+  });
+}
