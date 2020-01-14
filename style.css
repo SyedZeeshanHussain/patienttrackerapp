@@ -10,15 +10,27 @@ body{
   }
   
  #topbar{
-    min-width: 500px;
+    min-width: 510px;
  }
 
  #mainDiv{
     min-width: 500px;
+    margin-top: 80px;
  }
 
  .searchbtn{
      border-top-left-radius: 0px; 
      border-bottom-left-radius: 0px; 
+ }
+
+ .ptTable{
+     min-width: 500px;
+     margin-bottom: 5px;
+     border: 1px solid black;
+     box-shadow: 1px 1px 3px 0px gray;
+ }
+
+ .ptTable th, td{
+     padding: 5px;
  }
 
