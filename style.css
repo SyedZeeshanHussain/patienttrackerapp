@@ -30,6 +30,11 @@ body{
      box-shadow: 1px 1px 3px 0px gray;
  }
 
+ .ptTable:hover{
+    background-color: #FEF6D8;
+  
+ }
+
  .ptTable th, td{
      padding: 5px;
  }
