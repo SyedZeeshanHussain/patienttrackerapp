@@ -72,7 +72,7 @@ database.ref("patients/").on("value", function(snapshot) {
                 <td>
                 <button onclick="getPatient('${patients[i].key}')" data-toggle="modal"
                 data-target="#addPatient" class="btn btn-sm btn-warning">Edit Record</button>  
-                <button onclick="deletePatient('${patients[i].key}')" class="btn btn-sm btn-danger">Delete Record</button>
+                <button onclick="deletePatient('${patients[i].key}')" data-toggle="modal" data-target="#delPt" class="btn btn-sm btn-danger">Delete Record</button>
                 </td>
             </tr>
             </table>
@@ -217,11 +217,6 @@ function updatePatient(patientKey,name,age,disease,medication,aptDate,charges,co
   sendPatientData.onclick = function() {addPatient()};
 }
 
-//Delete Patient Function
-function deletePatient(patientKey) {
-  database.ref("patients/" + patientKey).remove();
-}
-
 // Reset Modal
 function reset(
 name,
@@ -248,4 +243,12 @@ contact.value = "";
 //   Reset Button Name After work
 sendPatientData.innerHTML = "Add Record";
 sendPatientData.onclick = function() {addPatient()};
+}
+
+//Delete Patient Function
+function deletePatient(patientKey) {
+  var delPt = document.getElementById('del');
+  delPt.onclick = function(){
+  database.ref("patients/" + patientKey).remove();
+  }
 }
