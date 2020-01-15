@@ -252,3 +252,24 @@ function deletePatient(patientKey) {
   database.ref("patients/" + patientKey).remove();
   }
 }
+
+// Search Patient Function
+
+ let patients = [];
+ database.ref('patients/').on('value', data =>{
+   patients = Object.values(data.val());
+   for (let i = 0; i < patients.length; i++){
+     patientsNames.push(patients[i].patientsNames)
+   }
+ });
+ let search = document.getElementById('searchByName');
+ let patientsNames = [];
+ search.addEventListener('keyup',(e)=>{
+   let key = e.target.value.toLowerCase();
+   console.log(e);
+   patientsNames.forEach((name)=>{
+     if(name.indexOf(key) != -1){
+       document.write(name);
+     }
+   });
+ });
