@@ -24,8 +24,7 @@
         <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#addPatient">
           <i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:#ffff;"></i>
         </button>
-        <button type="button" class="btn btn-sm btn-outline-secondary text-light border-light" onclick="toggleSearch();">Search by Date
-        </button>
+       
       </div>
     </div>
     </div>
@@ -39,14 +38,11 @@
       <div class="input-group input-group-sm">
         <input type="text" class="form-control mb-2" placeholder="Search Patient by Name" id="searchByName"
           onkeyup="searchName()">
+          <span class="ml-2"> || </span>
+          <input type="date" class="form-control ml-2" placeholder="Enter Appointment Date" id="searchDate" onblur="serachByDate()">
       </div>
-
-      <div class="input-group-sm mt-1" style='width:500px' id="dateSearchDiv">
-          <h6 class="text-center">Search by Appointment Date: <i class="fa fa-calendar" aria-hidden="true"></i></h6>
-        <input type="date" class="form-control" placeholder="Enter Appointment Date" id="searchDate" onblur="serachByDate()">
-      </div>
-      <a href="index.html" class="btn btn-success btn-sm float-right rounded-0" id="backbtn">See Full List</a>
   </div>
+  
   <!--Search Patient Section Ends-->
 
   <!--Patient Details-->
