@@ -13,7 +13,7 @@ body{
     min-width: 500px;
  }
 
- #mainDiv{
+ #mainDiv, #searchDiv{
     min-width: 500px;
     margin-top: 80px;
  }
@@ -37,5 +37,15 @@ body{
 
  .ptTable th, td{
      padding: 5px;
+ }
+
+ #backbtn{
+     display: none;
+     margin-top: 10px;
+     min-width: 500px;
+ }
+
+ #dateSearchDiv{
+     display: none;
  }
 

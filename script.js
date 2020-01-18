@@ -255,21 +255,55 @@ function deletePatient(patientKey) {
 
 // Search Patient Function
 
- let patients = [];
- database.ref('patients/').on('value', data =>{
-   patients = Object.values(data.val());
-   for (let i = 0; i < patients.length; i++){
-     patientsNames.push(patients[i].patientsNames)
-   }
- });
- let search = document.getElementById('searchByName');
- let patientsNames = [];
- search.addEventListener('keyup',(e)=>{
-   let key = e.target.value.toLowerCase();
-   console.log(e);
-   patientsNames.forEach((name)=>{
-     if(name.indexOf(key) != -1){
-       document.write(name);
-     }
-   });
- });
+ function searchName() {
+  // Declare variables
+  var input, filter, div, table;
+  input = document.getElementById('searchByName');
+  filter = input.value.toUpperCase();
+  div = document.getElementById("patientTable");
+  table = div.getElementsByTagName('table');
+
+  // Loop through all the tables, and hide those who don't match the search query
+  for (i = 0; i < table.length; i++) {
+ 
+    if (table[i].innerText.toUpperCase().indexOf(filter) > -1) {
+      table[i].style.display = "";
+    } else {
+      table[i].style.display = "none";
+    }
+  }
+}
+
+function serachByDate() {
+  // Declare variables
+  var input, filter, div, table;
+  input = document.getElementById('searchDate');
+  filter = input.value.toUpperCase();
+  div = document.getElementById("patientTable");
+  table = div.getElementsByTagName('table');
+  
+  // Loop through all the tables and hide those who don't match the search query
+  for (i = 0; i < table.length; i++) {
+   
+    if (table[i].innerText.toUpperCase().indexOf(filter) > -1) {
+      table[i].style.display = "";
+    } else {
+      table[i].style.display = "none";
+      document.getElementById('backbtn').style.display="block";
+      
+    }
+  }
+}
+
+// Toggle Searchbar Function
+function toggleSearch() {
+  var dateSearch = document.getElementById("dateSearchDiv");
+  if (dateSearch.style.display === "none") {
+    dateSearch.style.display = "block";
+  } else {
+    dateSearch.style.display = "none";
+  }
+}
+
+
+
