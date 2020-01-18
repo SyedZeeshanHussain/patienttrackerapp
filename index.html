@@ -38,8 +38,8 @@
       <div class="input-group input-group-sm">
         <input type="text" class="form-control mb-2" placeholder="Search Patient by Name" id="searchByName"
           onkeyup="searchName()">
-          <span class="ml-2"> || </span>
-          <input type="date" class="form-control ml-2" placeholder="Enter Appointment Date" id="searchDate" onblur="serachByDate()">
+         
+          <input type="text" class="form-control ml-2" onfocus="(this.type='date')" placeholder="Search by Appointment Date" id="searchDate" onblur="serachByDate(), this.type='text'">
       </div>
   </div>
   
