@@ -38,14 +38,3 @@ body{
  .ptTable th, td{
      padding: 5px;
  }
-
- #backbtn{
-     display: none;
-     margin-top: 10px;
-     min-width: 500px;
- }
-
- #dateSearchDiv{
-     display: none;
- }
-
