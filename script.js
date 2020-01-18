@@ -289,21 +289,6 @@ function serachByDate() {
       table[i].style.display = "";
     } else {
       table[i].style.display = "none";
-      document.getElementById('backbtn').style.display="block";
-      
     }
   }
 }
-
-// Toggle Searchbar Function
-function toggleSearch() {
-  var dateSearch = document.getElementById("dateSearchDiv");
-  if (dateSearch.style.display === "none") {
-    dateSearch.style.display = "block";
-  } else {
-    dateSearch.style.display = "none";
-  }
-}
-
-
-
