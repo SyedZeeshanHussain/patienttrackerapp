@@ -9,13 +9,13 @@ body{
       width: 80px;
   }
   
- #topbar{
+ #topbar, #searchDiv{
     min-width: 500px;
  }
 
- #mainDiv, #searchDiv{
-    min-width: 500px;
-    margin-top: 80px;
+ #mainDiv{
+    min-width: 600px;
+    margin-top: 120px;
  }
 
  .searchbtn{
@@ -32,7 +32,6 @@ body{
 
  .ptTable:hover{
     background-color: #FEF6D8;
-  
  }
 
  .ptTable th, td{

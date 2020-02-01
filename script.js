@@ -36,7 +36,7 @@ database.ref("patients/").on("value", function(snapshot) {
             <table class="ptTable">
             <tr>
                 <th width=120>Name: </th>
-                <td>${patients[i].name}</td>
+                <td><b>${patients[i].name}</b></td>
             </tr>
             <tr>
                 <th>Age: </th>

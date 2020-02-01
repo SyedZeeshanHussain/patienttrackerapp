@@ -17,36 +17,32 @@
 
   <!--App Header Section-->
   <header>
-    <div class="container-fluid m-auto text-center fixed-top">
-      <div class="row bg-success align-items-center justify-content-around d-inline-flex pr-3 pl-3 shadow" id="topbar">
+    <div class="container m-auto text-center fixed-top shadow bg-success" style="width:500px">
+      <div class="row bg-success align-items-center justify-content-around d-inline-flex pr-3 pl-3" id="topbar">
         <img src="./images/patients-white.png" alt="logo" id="pimage" class="p-2">
         <h2 class="text-light">Patient Tracker</h2>
         <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#addPatient">
           <i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:#ffff;"></i>
-        </button>
-       
+        </button> 
       </div>
-    </div>
-    </div>
-    </div>
-  </header>
-  <!--App Header Ends-->
-
-  <!--Searh Patient Section-->
-  <div class="container mb-0" id="searchDiv">
-    <div class="row m-auto" id="searchRow" style="width:500px">
+       <!--Searh Patient Section-->
+    <div class="row m-auto" id="searchRow" style="width:480px">
       <div class="input-group input-group-sm">
         <input type="text" class="form-control mb-2" placeholder="Search Patient by Name" id="searchByName"
           onkeyup="searchName()">
          
-          <input type="text" class="form-control ml-2" onfocus="(this.type='date')" placeholder="Search by Appointment Date" id="searchDate" onblur="serachByDate(), this.type='text'">
+          <input type="date" class="form-control ml-2" id="searchDate" onkeyup="serachByDate()" onblur="serachByDate()">
       </div>
   </div>
+    </div>
+  </header>
+  <!--App Header Ends-->
+
   
   <!--Search Patient Section Ends-->
 
   <!--Patient Details-->
-  <div class="container mt-1" id="mainDiv">
+  <div class="container" id="mainDiv">
     <div class="row m-auto" style="width:500px">
       <div id="patientTable"></div>
     </div>
